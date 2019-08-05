@@ -107,8 +107,7 @@ defmodule LinkedList do
     {nil, l}
   end
 
-  def delete_at(%__MODULE__{head: %LinkNode{next: next} = head, size: size} = l, index)
-      when index <= 0 do
+  def delete_at(%__MODULE__{head: %LinkNode{next: next} = head, size: size} = l, 0 = _index) do
     {head, %{l | head: next, size: size - 1}}
   end
 
